@@ -40,11 +40,14 @@ const removeExtraSpaces = (str) => {
     .join(" ");
 };
 
-const kebobCase = (str) => {
+const kebobCase = (str, separatingChar) => {
   return removeExtraSpaces(str)
     .split(" ")
-    .join("-")
+    .join(separatingChar)
     .toLowerCase()
     .replace(/[&\/\\#^+()$~%.'":*?<>{}!@]/g, "");
 };
 
+const snakeCase = (str) => {
+  return kebobCase(str, '_')
+};
