@@ -28,3 +28,7 @@ const capitalizeWords = (str) => {
     }
   }).join(" ")
 };
+
+const removeExtraSpaces = str => {
+  return str.trim().split(' ').filter(w => w).join(' ')
+}
