@@ -28,5 +28,3 @@ const capitalizeWords = (str) => {
     }
   }).join(" ")
 };
-
-console.log(capitalizeWords("in in whats up with you in the"));
