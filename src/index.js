@@ -59,3 +59,10 @@ const camelCase = (str) => {
     .join("");
 };
 
+const shift = (str, num=1) => {
+  let temp = str.substr(0, num)
+  return str.slice(num) + temp
+
+}
+
+
