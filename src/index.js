@@ -49,5 +49,13 @@ const kebobCase = (str, separatingChar) => {
 };
 
 const snakeCase = (str) => {
-  return kebobCase(str, '_')
+  return kebobCase(str, "_");
 };
+
+const camelCase = (str) => {
+  return str
+    .split(" ")
+    .map((word, index) => (index !== 0 ? capitalize(word) : word))
+    .join("");
+};
+
