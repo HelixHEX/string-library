@@ -59,10 +59,18 @@ const camelCase = (str) => {
     .join("");
 };
 
-const shift = (str, num=1) => {
-  let temp = str.substr(0, num)
-  return str.slice(num) + temp
+const shift = (str, num = 1) => {
+  let temp = str.substr(0, num);
+  return str.slice(num) + temp;
+};
 
-}
-
+const makeHashTag = (str) => {
+  return str
+    .split(" ")
+    .sort((a, b) => b.length - a.length)
+    .slice(0, 3)
+    .map((word) => {
+      return  '#' + capitalize(`${word}`);
+    });
+};
 
