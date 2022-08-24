@@ -78,3 +78,16 @@ const isEmpty = (str) => {
   return str.replace(/\s/g, "").length === 0;
 };
 
+export {
+  capitalize,
+  allCaps,
+  capitalizeWords,
+  removeExtraSpaces,
+  kebobCase,
+  snakeCase,
+  camelCase,
+  shift,
+  makeHashTag,
+  isEmpty,
+}
+
