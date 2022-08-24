@@ -70,7 +70,11 @@ const makeHashTag = (str) => {
     .sort((a, b) => b.length - a.length)
     .slice(0, 3)
     .map((word) => {
-      return  '#' + capitalize(`${word}`);
+      return "#" + capitalize(`${word}`);
     });
+};
+
+const isEmpty = (str) => {
+  return str.replace(/\s/g, "").length === 0;
 };
 
