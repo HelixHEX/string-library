@@ -1,82 +1,65 @@
-const capitalize = (str) => {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-};
+const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
-const allCaps = (str) => {
-  return str.toUpperCase();
-};
+const allCaps = (str) => str.toUpperCase();
 
 const capitalizeWords = (str) => {
-  return str
-    .split(" ")
+  str
+    .split(' ')
     .map((word, index) => {
       if (index !== 0) {
         if (
-          word !== "the" &&
-          word !== "in" &&
-          word !== "a" &&
-          word !== "an" &&
-          word !== "and" &&
-          word !== "but" &&
-          word !== "for" &&
-          word !== "at" &&
-          word !== "but" &&
-          word !== "from"
+          word !== 'the'
+          && word !== 'in'
+          && word !== 'a'
+          && word !== 'an'
+          && word !== 'and'
+          && word !== 'but'
+          && word !== 'for'
+          && word !== 'at'
+          && word !== 'but'
+          && word !== 'from'
         ) {
           return capitalize(word);
-        } else return word;
-      } else {
-        return capitalize(word);
+        }
+        return word;
       }
+      return capitalize(word);
     })
-    .join(" ");
+    .join(' ');
 };
 
-const removeExtraSpaces = (str) => {
-  return str
-    .trim()
-    .split(" ")
-    .filter((w) => w)
-    .join(" ");
-};
+const removeExtraSpaces = (str) => str
+  .trim()
+  .split(' ')
+  .filter((w) => w)
+  .join(' ');
 
-const kebobCase = (str, separatingChar) => {
-  return removeExtraSpaces(str)
-    .split(" ")
-    .join(separatingChar)
-    .toLowerCase()
-    .replace(/[&\/\\#^+()$~%.'":*?<>{}!@]/g, "");
-};
+const kebobCase = (str, separatingChar) => removeExtraSpaces(str)
+  .split(' ')
+  .join(separatingChar)
+  .toLowerCase()
+  // eslint-disable-next-line no-useless-escape
+  .replace(/[&\/\\#^+()$~%.'':*?<>{}!@]/g, '');
 
-const snakeCase = (str) => {
-  return kebobCase(str, "_");
-};
+const snakeCase = (str) => kebobCase(str, '_');
 
-const camelCase = (str) => {
-  return str
-    .split(" ")
-    .map((word, index) => (index !== 0 ? capitalize(word) : word))
-    .join("");
-};
+const camelCase = (str) => str
+  .split(' ')
+  .map((word, index) => (index !== 0 ? capitalize(word) : word))
+  .join('');
 
 const shift = (str, num = 1) => {
-  let temp = str.substr(0, num);
+  const temp = str.substr(0, num);
   return str.slice(num) + temp;
 };
 
-const makeHashTag = (str) => {
-  return str
-    .split(" ")
-    .sort((a, b) => b.length - a.length)
-    .slice(0, 3)
-    .map((word) => {
-      return "#" + capitalize(`${word}`);
-    });
-};
+const makeHashTag = (str) => str
+  .split(' ')
+  .sort((a, b) => b.length - a.length)
+  .slice(0, 3)
+  .map((word) => `#${capitalize(`${word}`)}`);
 
-const isEmpty = (str) => {
-  return str.replace(/\s/g, "").length === 0;
-};
+const isEmpty = (str) => str.replace(/\s/g, '').length === 0;
 
 export {
   capitalize,
@@ -89,5 +72,4 @@ export {
   shift,
   makeHashTag,
   isEmpty,
-}
-
+};
