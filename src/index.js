@@ -61,15 +61,38 @@ const makeHashTag = (str) => str
 
 const isEmpty = (str) => str.replace(/\s/g, '').length === 0;
 
-export {
-  capitalize,
-  allCaps,
-  capitalizeWords,
-  removeExtraSpaces,
-  kebobCase,
-  snakeCase,
-  camelCase,
-  shift,
-  makeHashTag,
-  isEmpty,
-};
+// module.exports = {
+//   capitalize,
+//   allCaps,
+//   capitalizeWords,
+//   removeExtraSpaces,
+//   kebobCase,
+//   snakeCase,
+//   camelCase,
+//   shift,
+//   makeHashTag,
+//   isEmpty,
+// };
+
+module.exports.capitalize = capitalize;
+module.exports.allCaps = allCaps;
+module.exports.capitalizeWords = capitalizeWords;
+module.exports.removeExtraSpaces = removeExtraSpaces;
+module.exports.kebobCase = kebobCase;
+module.exports.snakeCase = snakeCase;
+module.exports.camelCase = camelCase;
+module.exports.shift = shift;
+module.exports.makeHashTag = makeHashTag;
+module.exports.isEmpty = isEmpty;
+// module.exports.default = {
+//   capitalize,
+//   allCaps,
+//   capitalizeWords,
+//   removeExtraSpaces,
+//   kebobCase,
+//   snakeCase,
+//   camelCase,
+//   shift,
+//   makeHashTag,
+//   isEmpty
+// }
