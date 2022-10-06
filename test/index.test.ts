@@ -1,15 +1,15 @@
-const capitalize = require('../src');
-const allCaps = require('../src');
-const capitalizeWords = require('../src');
-const removeExtraSpaces = require('../src');
-const kebobCase = require('../src');
-const snakeCase = require('../src');
-const camelCase = require('../src');
-const shift = require('../src');
-const makeHashTag = require('../src');
-const isEmpty = require('../src');
-
-// test all functions
+import {
+  capitalize,
+  capitalizeWords,
+  removeExtraSpaces,
+  allCaps,
+  kebobCase,
+  snakeCase,
+  camelCase,
+  shift,
+  makeHashTag,
+  isEmpty,
+} from '../src';
 
 test('capitalize', () => {
   expect(capitalize('hello')).toBe('Hello');
@@ -25,11 +25,11 @@ test('capitalizeWords', () => {
 });
 
 test('removeExtraSpaces', () => {
-  expect(removeExtraSpaces('hello')).toBe('hello');
+  expect(removeExtraSpaces('hello fdsf sdf    sdf')).toBe('hello fdsf sdf sdf');
 });
 
 test('kebobCase', () => {
-  expect(kebobCase('hello')).toBe('hello');
+  expect(kebobCase('hello', '-')).toBe('hello');
 });
 
 test('snakeCase', () => {
@@ -41,12 +41,12 @@ test('camelCase', () => {
 });
 
 test('shift', () => {
-  expect(shift('hello')).toBe('hello');
+  expect(shift('hello')).toBe('elloh');
 });
 
 test('makeHashTag', () => {
-  expect(makeHashTag('hello')).toBe('hello');
-})
+  expect(makeHashTag('hello')).toStrictEqual(['#Hello']);
+});
 
 test('isEmpty', () => {
   expect(isEmpty('hello')).toBe(false);
